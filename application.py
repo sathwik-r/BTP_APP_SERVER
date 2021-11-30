@@ -7,9 +7,9 @@ import jsonpickle
 import numpy as np
 import cv2
 from apis import predict_image_class
-app=Flask(__name__)
+application=Flask(__name__)
 
-@app.route('/process_image', methods=['POST', 'GET'])
+@application.route('/process_image', methods=['POST', 'GET'])
 def process_image():
     print("started")
     image_path=request.files['image']
@@ -31,4 +31,4 @@ def process_image():
     return Response(res, status=200, mimetype='application/json')
 
 if __name__=='__main__':
-    app.run(debug=True)
+    application.run(debug=True)
