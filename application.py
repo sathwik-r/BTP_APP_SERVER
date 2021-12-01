@@ -5,7 +5,6 @@ from io import BytesIO
 from PIL import Image
 import jsonpickle
 import numpy as np
-import cv2
 from apis import predict_image_class
 application=Flask(__name__)
 
