@@ -9,6 +9,9 @@ import cv2
 from apis import predict_image_class
 application=Flask(__name__)
 
+@application.route('/',methods=['POST','GET'])
+def home_page():
+    return 'Welcome To Plant Doctor Server'
 @application.route('/process_image', methods=['POST', 'GET'])
 def process_image():
     print("started")
