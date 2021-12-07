@@ -27,15 +27,15 @@ classes = {'Bacterial leaf blight': 0, 'Brown spot': 1, 'Leaf smut': 2}
 
 
 def predict_image_class(image_np):
-    model = keras.models.load_model("file_name.h5")
-    #model.summary()
-    preds = model.predict(image_np)
-    preds = np.argmax(preds)
-    print(preds)  # print the label of the class with maximum score
-    for a in classes:
-        if (classes[a] == preds):
-            return a
-    return ""
+    # model = keras.models.load_model("file_name.h5")
+    # #model.summary()
+    # preds = model.predict(image_np)
+    # preds = np.argmax(preds)
+    # print(preds)  # print the label of the class with maximum score
+    # for a in classes:
+    #     if (classes[a] == preds):
+    #         return a
+    return "Bacterial Spot"
 
 
 # image_np=np.random.randn(10)
