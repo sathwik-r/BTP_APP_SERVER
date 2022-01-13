@@ -27,21 +27,23 @@ classes = {'Bacterial leaf blight': 0, 'Brown spot': 1, 'Leaf smut': 2}
 
 
 def predict_image_class(image_np):
-    # model = keras.models.load_model("file_name.h5")
-    # #model.summary()
-    # preds = model.predict(image_np)
-    # preds = np.argmax(preds)
-    # print(preds)  # print the label of the class with maximum score
-    # for a in classes:
-    #     if (classes[a] == preds):
-    #         return a
-    return "Bacterial Spot"
+    model = keras.models.load_model("RICE_updated.h5")
+    #model.summary()
+    preds = model.predict(image_np)
+    print(preds)
+    preds = np.argmax(preds)
+    print(preds)  # print the label of the class with maximum score
+    for a in classes:
+        if (classes[a] == preds):
+            return a
+    return "Not Found"
 
 
 # image_np=np.random.randn(10)
 # img_width, img_height = 224, 224
-# img = image.load_img('index.jpeg', target_size = (img_width, img_height))
+# img = image.load_img('brown_spot_predict.jpg',
+#                      target_size=(img_width, img_height))
 # img = image.img_to_array(img)
-# img = np.expand_dims(img, axis = 0)
-# prediction=predict_image_class(img)
-# print("final",prediction)
+# img = np.expand_dims(img, axis=0)
+# prediction = predict_image_class(img)
+# print("final", prediction)
